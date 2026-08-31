@@ -3,32 +3,35 @@ import axios from 'axios';
 const GITHUB_USERNAME = 'harshpatel1011';
 const PROJECT_ORDER = [
   "Skill-Exchange-Platform",
+  "Tech-Blogs",
+  "Library-Management",
   "HP-Terminal-Portfolio",
+  "ContactBook",
+  "Hospital",
   "Creative-Hackathon-Enquiry-Portal",
-  "ReactJS-09-The-Rick-and-Morty-API",
-  "ReactJS-09-To-Do-List",
-  "ReactJS-07-Tic-Tac-Toe",
-  "EMS"
+  "The-Rick-and-Morty-API"
 ];
 
 const CUSTOM_DESCRIPTIONS = {
   "Skill-Exchange-Platform": "A modern platform for users to exchange skills and knowledge, built with React and Vite.",
+  "Tech-Blogs": "A full-featured technical blogging platform built with Django for creating and publishing articles.",
+  "Library-Management": "A robust library management system built with Django for tracking books, issues, and student memberships.",
   "HP-Terminal-Portfolio": "A unique, interactive terminal-style developer portfolio built with JavaScript.",
+  "ContactBook": "A contact management system developed with Django and Python for organizing and storing contact information.",
+  "Hospital": "A hospital management web application built with Django and Python to manage patients, appointments, and doctors.",
   "Creative-Hackathon-Enquiry-Portal": "An enquiry portal system designed for a creative hackathon using Python and Flask.",
-  "ReactJS-09-The-Rick-and-Morty-API": "A React application fetching and displaying characters from The Rick and Morty API.",
-  "ReactJS-09-To-Do-List": "A responsive To-Do List application built with React to manage daily tasks efficiently.",
-  "ReactJS-07-Tic-Tac-Toe": "An interactive Tic-Tac-Toe game developed in React with state management.",
-  "EMS": "An Employee Management System for tracking and managing staff details and activities."
+  "The-Rick-and-Morty-API": "A React application fetching and displaying characters from The Rick and Morty API."
 };
 
 const CUSTOM_TOPICS = {
   "Skill-Exchange-Platform": ["React", "Vite", "JavaScript", "Tailwind CSS"],
+  "Tech-Blogs": ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
+  "Library-Management": ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
   "HP-Terminal-Portfolio": ["React", "HTML", "CSS", "JavaScript"],
+  "ContactBook": ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
+  "Hospital": ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
   "Creative-Hackathon-Enquiry-Portal": ["Python", "Flask", "SQLite", "HTML", "CSS"],
-  "ReactJS-09-The-Rick-and-Morty-API": ["React", "JavaScript", "REST API", "CSS"],
-  "ReactJS-09-To-Do-List": ["React", "JavaScript", "HTML", "CSS"],
-  "ReactJS-07-Tic-Tac-Toe": ["React", "JavaScript", "HTML", "CSS"],
-  "EMS": ["HTML", "CSS"]
+  "The-Rick-and-Morty-API": ["React", "JavaScript", "REST API", "CSS"]
 };
 
 export const fetchGithubRepos = async () => {
@@ -54,38 +57,5 @@ export const fetchGithubRepos = async () => {
     }));
   } catch (error) {
     console.error('Error fetching GitHub repos:', error);
-    // Fallback data
-    return [
-      {
-        id: 1,
-        name: 'Portfolio-3D',
-        description: 'Immersive premium developer portfolio with 3D elements.',
-        html_url: '#',
-        homepage: '#',
-        stargazers_count: 120,
-        topics: ['react', 'threejs', 'gsap'],
-        language: 'JavaScript',
-      },
-      {
-        id: 2,
-        name: 'E-commerce UI',
-        description: 'Modern glassmorphism e-commerce frontend.',
-        html_url: '#',
-        homepage: '#',
-        stargazers_count: 85,
-        topics: ['tailwind', 'framer-motion'],
-        language: 'TypeScript',
-      },
-      {
-        id: 3,
-        name: 'NovaDash Admin',
-        description: 'React Admin panel dashboard with full analytics.',
-        html_url: '#',
-        homepage: '#',
-        stargazers_count: 65,
-        topics: ['react', 'recharts'],
-        language: 'JavaScript',
-      },
-    ];
   }
 };
