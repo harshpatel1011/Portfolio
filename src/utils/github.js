@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const GITHUB_USERNAME = 'harshpatel1011';
 const PROJECT_ORDER = [
+  "Interview-Platform",
   "Skill-Exchange-Platform",
   "Tech-Blogs",
   "Library-Management",
@@ -13,6 +14,7 @@ const PROJECT_ORDER = [
 ];
 
 const CUSTOM_DESCRIPTIONS = {
+  "Interview-Platform": "A comprehensive online interview platform built with Python and Django, featuring portals for candidates, companies, and interviewers.",
   "Skill-Exchange-Platform": "A modern platform for users to exchange skills and knowledge, built with React and Vite.",
   "Tech-Blogs": "A full-featured technical blogging platform built with Django for creating and publishing articles.",
   "Library-Management": "A robust library management system built with Django for tracking books, issues, and student memberships.",
@@ -24,6 +26,7 @@ const CUSTOM_DESCRIPTIONS = {
 };
 
 const CUSTOM_TOPICS = {
+  "Interview-Platform": ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
   "Skill-Exchange-Platform": ["React", "Vite", "JavaScript", "Tailwind CSS"],
   "Tech-Blogs": ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
   "Library-Management": ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
