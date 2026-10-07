@@ -23,12 +23,12 @@ export const Navbar = () => {
       transition={{ duration: 0.8, ease: 'easeOut', delay: 1 }}
       className="fixed top-0 left-0 right-0 z-[100] px-6 py-4 md:px-12 md:py-6"
     >
-      <div className="max-w-7xl mx-auto glass rounded-full px-6 py-3 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto bg-slate-900/50 backdrop-blur-md border border-slate-800 shadow-sm rounded-full px-6 py-3 flex justify-between items-center">
         <button 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-heading font-bold text-xl tracking-tighter hoverable text-left"
+          className="font-heading font-bold text-xl tracking-tighter hoverable text-left text-white"
         >
-          Harsh<span className="text-primary">.</span>
+          Harsh<span className="text-cyan-400">.</span>
         </button>
         
         <div className="hidden md:flex space-x-8">
@@ -36,7 +36,7 @@ export const Navbar = () => {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors hoverable"
+              className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors hoverable"
             >
               {link.name}
             </button>
@@ -45,7 +45,7 @@ export const Navbar = () => {
 
         <button 
           onClick={() => scrollTo('contact')}
-          className="px-5 py-2 bg-white/10 hover:bg-white/20 transition-colors border border-white/10 rounded-full text-sm font-medium hoverable"
+          className="px-5 py-2 bg-slate-800/80 hover:bg-slate-800 hover:text-cyan-400 transition-colors border border-slate-700 hover:border-cyan-500/50 rounded-full text-sm font-medium hoverable text-white"
         >
           Let's Talk
         </button>

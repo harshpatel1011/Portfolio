@@ -43,10 +43,10 @@ export const Loader = ({ onComplete }) => {
     >
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-[#050505] origin-bottom w-full h-full"
+        className="absolute inset-0 bg-slate-950 origin-bottom w-full h-full"
       />
-      <div ref={textRef} className="relative z-10 text-white text-4xl md:text-6xl font-semibold tracking-tighter">
-        <span className="text-gradient">Welcome.</span>
+      <div ref={textRef} className="relative z-10 text-white text-4xl md:text-6xl font-extrabold tracking-tighter">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Welcome.</span>
       </div>
     </div>
   );

@@ -46,8 +46,8 @@ export const CustomCursor = () => {
       x: mousePosition.x - 32,
       y: mousePosition.y - 32,
       scale: 2,
-      backgroundColor: 'rgba(170, 59, 255, 0.1)',
-      border: '1px solid #aa3bff',
+      backgroundColor: 'rgba(34, 211, 238, 0.1)',
+      border: '1px solid #22d3ee',
       opacity: 1,
     },
   };

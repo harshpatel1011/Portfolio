@@ -1,120 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
-import { Send, Mail, MapPin } from 'lucide-react';
-import { FaLinkedin } from 'react-icons/fa';
+import { Mail, ArrowUpRight } from 'lucide-react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Normally handle form submission here
-    console.log("Form submitted", formData);
-    alert("Thanks for reaching out! (Demo)");
-  };
-
   return (
-    <SectionWrapper id="contact" className="bg-[#0a0510] relative overflow-hidden">
-      {/* Decorative bg element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+    <SectionWrapper id="contact" className="bg-slate-950 relative overflow-hidden py-32 min-h-screen flex items-center justify-center">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div 
+          className="absolute inset-0 opacity-[0.04]" 
+          style={{ 
+            backgroundImage: 'radial-gradient(circle at center, white 1.5px, transparent 1.5px)', 
+            backgroundSize: '32px 32px',
+          }} 
+        />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px]" />
+      </div>
 
-      <div className="max-w-6xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-          <div className="space-y-8 reveal-up opacity-0">
-            <div>
-              <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">05. What's Next?</span>
-              <h2 className="text-5xl md:text-7xl font-heading font-semibold text-white mb-6">
-                Let's work together.
-              </h2>
-              <p className="text-foreground/70 text-lg font-light max-w-md">
-                I'm currently available for freelance work and open to new opportunities. Send me a message and let's craft something amazing.
-              </p>
-            </div>
-
-            <div className="space-y-6 pt-8 border-t border-white/10">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-primary">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-foreground/50 font-mono">Email</p>
-                  <a href="mailto:harshpatel6342@gmail.com" className="text-lg font-medium hover:text-primary transition-colors">harshpatel6342@gmail.com</a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-primary">
-                  <FaLinkedin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-foreground/50 font-mono">LinkedIn</p>
-                  <a href="https://linkedin.com/in/harshpatel1111" target="_blank" rel="noreferrer" className="text-lg font-medium hover:text-primary transition-colors">linkedin.com/in/harshpatel1111</a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-primary">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-foreground/50 font-mono">Location</p>
-                  <p className="text-lg font-medium">Ahmedabad, Gujarat, India</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="reveal-up opacity-0 transform translate-y-8">
-            <form onSubmit={handleSubmit} className="glass p-8 md:p-10 rounded-3xl border border-white/10 flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-sm font-medium text-foreground/70">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-foreground/30 font-light"
-                  placeholder="Harsh Patel"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm font-medium text-foreground/70">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-foreground/30 font-light"
-                  placeholder="harshpatel6342@gmail.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-medium text-foreground/70">Message</label>
-                <textarea
-                  id="message"
-                  required
-                  rows={5}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-foreground/30 font-light resize-none"
-                  placeholder="How can I help you?"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="hoverable w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-white/90 transition-colors flex items-center justify-center gap-2 mt-4"
-              >
-                Send Message
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
-          </div>
-
+      <div className="max-w-4xl mx-auto w-full relative z-10 flex flex-col items-center text-center">
+        <div className="inline-flex items-center gap-3 mb-6 reveal-up opacity-0">
+          <div className="w-8 h-[1px] bg-cyan-500/50"></div>
+          <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">05. What's Next?</span>
+          <div className="w-8 h-[1px] bg-cyan-500/50"></div>
         </div>
+        
+        <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-extrabold text-white mb-8 tracking-tight reveal-up opacity-0 leading-tight">
+          Get In Touch.
+        </h2>
+        
+        <p className="text-slate-400 text-lg md:text-xl font-light max-w-2xl mb-16 reveal-up opacity-0">
+          I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!
+        </p>
+
+        <a 
+          href="mailto:harshpatel6342@gmail.com"
+          className="group relative inline-flex items-center justify-center gap-4 px-8 py-5 md:px-12 md:py-6 bg-slate-900/50 backdrop-blur-md rounded-full border border-slate-700 hover:border-cyan-400 hover:bg-slate-800 transition-all duration-500 reveal-up opacity-0 overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.2)]"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <Mail className="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform duration-500 relative z-10" />
+          <span className="text-xl md:text-3xl font-medium text-white relative z-10">harshpatel6342@gmail.com</span>
+        </a>
+
+
       </div>
     </SectionWrapper>
   );
