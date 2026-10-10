@@ -1,8 +1,13 @@
 import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
 
-const row1 = ["HTML5", "CSS3", "React JS", "Tailwind CSS", "JavaScript", "Python", "Django", "PostgreSQL", "Git", "VS Code", "Vercel"];
-const row2 = ["C++", "C", "MySQL", "SQLite", "jQuery", "Postman", "GitHub", "Render", "Claude", "Gemini", "ChatGPT", "GitHub Copilot"];
+const desktopRow1 = ["HTML5", "CSS3", "React JS", "Tailwind CSS", "JavaScript", "Python", "Django", "PostgreSQL", "Git", "VS Code", "Vercel"];
+const desktopRow2 = ["C++", "C", "MySQL", "SQLite", "jQuery", "Postman", "GitHub", "Render", "Claude", "Gemini", "ChatGPT", "GitHub Copilot"];
+
+const mobileRow1 = ["HTML5", "CSS3", "React JS", "Tailwind CSS", "JavaScript", "Python"];
+const mobileRow2 = ["Django", "PostgreSQL", "Git", "VS Code", "Vercel"];
+const mobileRow3 = ["C++", "C", "MySQL", "SQLite", "jQuery", "Postman"];
+const mobileRow4 = ["GitHub", "Render", "Claude", "Gemini", "ChatGPT", "GitHub Copilot"];
 
 export const Skills = () => {
   return (
@@ -61,31 +66,71 @@ export const Skills = () => {
           {/* Mask for fading edges */}
           <div className="absolute inset-0 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #020617 0%, transparent 15%, transparent 85%, #020617 100%)' }}></div>
 
-          {/* Row 1 */}
-          <div className="flex overflow-hidden">
-            <div className="marquee-container gap-4 pr-4">
-              {[...row1, ...row1].map((skill, idx) => (
-                <div 
-                  key={idx}
-                  className="px-6 py-3 bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap hover:border-cyan-500/50 hover:text-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all duration-300 cursor-default"
-                >
-                  {skill}
-                </div>
-              ))}
+          {/* Desktop 2 Rows */}
+          <div className="hidden md:flex flex-col gap-6">
+            <div className="flex overflow-hidden">
+              <div className="marquee-container gap-4 pr-4">
+                {[...desktopRow1, ...desktopRow1].map((skill, idx) => (
+                  <div 
+                    key={idx}
+                    className="px-6 py-3 bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap hover:border-cyan-500/50 hover:text-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all duration-300 cursor-default"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex overflow-hidden">
+              <div className="marquee-container-reverse gap-4 pr-4">
+                {[...desktopRow2, ...desktopRow2].map((skill, idx) => (
+                  <div 
+                    key={idx}
+                    className="px-6 py-3 bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap hover:border-blue-500/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300 cursor-default"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Row 2 */}
-          <div className="flex overflow-hidden">
-            <div className="marquee-container-reverse gap-4 pr-4">
-              {[...row2, ...row2].map((skill, idx) => (
-                <div 
-                  key={idx}
-                  className="px-6 py-3 bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap hover:border-blue-500/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300 cursor-default"
-                >
-                  {skill}
-                </div>
-              ))}
+          {/* Mobile 4 Rows */}
+          <div className="flex md:hidden flex-col gap-4">
+            <div className="flex overflow-hidden">
+              <div className="marquee-container gap-4 pr-4">
+                {[...mobileRow1, ...mobileRow1, ...mobileRow1].map((skill, idx) => (
+                  <div key={idx} className="px-5 py-2.5 text-sm bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap cursor-default">
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex overflow-hidden">
+              <div className="marquee-container-reverse gap-4 pr-4">
+                {[...mobileRow2, ...mobileRow2, ...mobileRow2].map((skill, idx) => (
+                  <div key={idx} className="px-5 py-2.5 text-sm bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap cursor-default">
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex overflow-hidden">
+              <div className="marquee-container gap-4 pr-4">
+                {[...mobileRow3, ...mobileRow3, ...mobileRow3].map((skill, idx) => (
+                  <div key={idx} className="px-5 py-2.5 text-sm bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap cursor-default">
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex overflow-hidden">
+              <div className="marquee-container-reverse gap-4 pr-4">
+                {[...mobileRow4, ...mobileRow4, ...mobileRow4].map((skill, idx) => (
+                  <div key={idx} className="px-5 py-2.5 text-sm bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-full text-slate-300 font-medium whitespace-nowrap cursor-default">
+                    {skill}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

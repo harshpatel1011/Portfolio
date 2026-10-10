@@ -61,21 +61,20 @@ export const Experience = () => {
         <div className="relative">
           {/* Vertical Line */}
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-cyan-500/50 via-blue-500/20 to-transparent -translate-x-1/2 hidden md:block" />
-          <div className="absolute left-[39px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-cyan-500/50 via-blue-500/20 to-transparent md:hidden" />
 
-          <div className="space-y-12">
+          <div className="space-y-6 md:space-y-12">
             {timelineData.map((item, index) => (
               <div 
                 key={item.id} 
                 className={`relative flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} reveal-up opacity-0`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-6 md:left-1/2 top-0 translate-x-[-50%] w-12 h-12 rounded-full bg-slate-900 border-2 border-cyan-500/50 flex items-center justify-center z-10 text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+                <div className="absolute left-6 md:left-1/2 top-0 translate-x-[-50%] w-12 h-12 rounded-full bg-slate-900 border-2 border-cyan-500/50 hidden md:flex items-center justify-center z-10 text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.3)]">
                   {item.icon}
                 </div>
 
                 {/* Content */}
-                <div className="w-full md:w-1/2 pl-24 md:pl-0">
+                <div className="w-full md:w-1/2">
                   <div className={`w-full ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
                     <div className="bg-slate-900/40 backdrop-blur-md p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300 group">
                       <span className="text-cyan-400 font-mono text-sm mb-3 block">{item.period}</span>
